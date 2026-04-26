@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+
+<html class="light" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Cuestionario de Diagnóstico | ARCHITECTURAL INTELLECTUALISM</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#e9e0e1",
+                        "outline": "#757681",
+                        "secondary-fixed-dim": "#ccc5c6",
+                        "inverse-on-surface": "#f8efed",
+                        "tertiary-fixed-dim": "#ffb689",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#45464f",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#1e1b1c",
+                        "tertiary-fixed": "#ffdbc8",
+                        "on-tertiary-fixed-variant": "#733502",
+                        "background": "#fff8f6",
+                        "on-tertiary-fixed": "#321300",
+                        "secondary": "#625d5e",
+                        "surface-dim": "#e1d8d6",
+                        "inverse-surface": "#342f2e",
+                        "surface-container": "#f5ecea",
+                        "on-surface": "#1e1b1a",
+                        "primary": "#0A1E54",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1e1b1a",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e9e0e1",
+                        "surface-container-high": "#efe6e4",
+                        "surface-container-low": "#fbf2f0",
+                        "surface-variant": "#e9e1df",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "outline-variant": "#c5c6d1",
+                        "surface-tint": "#4c5c94",
+                        "surface-container-highest": "#e9e1df",
+                        "surface-bright": "#fff8f6",
+                        "on-primary-fixed-variant": "#33447a",
+                        "primary-container": "#0a1e54",
+                        "surface": "#fff8f6",
+                        "primary-fixed": "#dce1ff",
+                        "on-primary-container": "#7787c3",
+                        "tertiary": "#1a0700",
+                        "tertiary-container": "#3c1800",
+                        "on-tertiary-container": "#c57640",
+                        "on-secondary-container": "#696364",
+                        "on-primary-fixed": "#01164d",
+                        "inverse-primary": "#b6c4ff",
+                        "on-secondary-fixed-variant": "#4a4547",
+                        "error": "#ba1a1a",
+                        "accent": "#C87842",
+                        "neutral-custom": "#F9F0EE",
+                        "secondary-custom": "#CFC7C8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Work Sans"],
+                        "label": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        input[type="radio"]:checked + label {
+            background-color: #00092d;
+            color: #ffffff;
+        }
+        .editorial-line {
+            border-bottom: 2px solid rgba(117, 118, 129, 0.3);
+            transition: border-color 0.3s ease;
+        }
+        .editorial-line:focus-within {
+            border-color: #c87842;
+        }
+        /* Mobile Menu Animation */
+        #mobile-menu {
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #mobile-menu.hidden-menu {
+            transform: translateX(100%);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-tertiary-fixed selection:text-tertiary">
+<!-- TopAppBar Navigation Shell -->
+<header class="bg-neutral-custom/95 dark:bg-[#00092d]/95 backdrop-blur-md fixed top-0 left-0 w-full z-50">
+<nav class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-primary dark:text-neutral-custom font-['Space_Grotesk'] uppercase" style="">metis organizer</div>
+<div class="hidden lg:flex gap-8 items-center font-['Space_Grotesk'] uppercase tracking-tighter text-sm">
+<a class="text-primary dark:text-secondary-custom opacity-70 hover:opacity-100 hover:text-accent transition-colors duration-200" href="index.html" style="">HOME</a>
+<a class="text-primary dark:text-secondary-custom opacity-70 hover:opacity-100 hover:text-accent transition-colors duration-200" href="pomodoro.html" style="">Pomodoro</a>
+<a class="text-primary dark:text-secondary-custom opacity-70 hover:opacity-100 hover:text-accent transition-colors duration-200" href="feynman.html" style="">Feynman</a>
+<a class="text-primary dark:text-secondary-custom opacity-70 hover:opacity-100 hover:text-accent transition-colors duration-200" href="sqr.html" style="">SQ3R</a>
+<a class="bg-primary text-on-primary px-6 py-2 sharp-border font-bold hover:bg-accent transition-colors" href="form.html" style="">Comenzar</a>
+</div>
+<div class="lg:hidden">
+<span class="material-symbols-outlined text-primary" style="">menu</span>
+</div>
+</nav>
+    </header>
+
+    <!-- Mobile/Tablet Side Navigation Drawer -->
+<div class="fixed inset-0 z-[60] hidden" id="mobile-menu-overlay">
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-sm" id="overlay-bg"></div>
+<aside class="absolute right-0 top-0 h-full w-80 bg-background border-l-2 border-primary p-8 hidden-menu" id="mobile-menu">
+<div class="flex justify-between items-center mb-12">
+<span class="font-headline font-bold text-sm tracking-tighter">MENÚ</span>
+<button class="text-primary" id="menu-close">
+<span class="material-symbols-outlined text-3xl">close</span>
+</button>
+</div>
+<nav class="flex flex-col gap-6 uppercase font-headline text-2xl font-bold tracking-tighter">
+<a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Home</a>
+<a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Pomodoro</a>
+<a class="hover:text-tertiary-fixed-dim transition-colors" href="#">Feynman</a>
+<a class="hover:text-tertiary-fixed-dim transition-colors" href="#">SQ3R</a>
+</nav>
+<div class="mt-12 pt-8 border-t border-primary/10">
+<button class="w-full bg-primary text-on-primary px-8 py-4 font-label font-bold text-sm tracking-widest transition-transform active:translate-y-0.5 uppercase">
+                INICIAR SESIÓN
+            </button>
+</div>
+</aside>
+</div>
+<script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileMenuOverlay = document.getElementById('mobile-menu-overlay');
+    const overlayBg = document.getElementById('overlay-bg');
+
+    function toggleMenu() {
+        const isHidden = mobileMenuOverlay.classList.contains('hidden');
+        if (isHidden) {
+            mobileMenuOverlay.classList.remove('hidden');
+            setTimeout(() => {
+                mobileMenu.classList.remove('hidden-menu');
+            }, 10);
+            document.body.style.overflow = 'hidden';
+        } else {
+            mobileMenu.classList.add('hidden-menu');
+            setTimeout(() => {
+                mobileMenuOverlay.classList.add('hidden');
+            }, 300);
+            document.body.style.overflow = '';
+        }
+    }
+
+    menuToggle.addEventListener('click', toggleMenu);
+    menuClose.addEventListener('click', toggleMenu);
+    overlayBg.addEventListener('click', toggleMenu);
+</script>
+<main class="min-h-[1024px]">
+<!-- Hero Section -->
+<section class="relative h-[409px] bg-primary flex items-end p-6 md:p-12 overflow-hidden">
+<div class="absolute inset-0 opacity-40 mix-blend-overlay">
+<div class="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516979187457-637abb4f9353?ixlib=rb-4.0.3&amp;auto=format&amp;fit=crop&amp;w=1470&amp;q=80')] bg-cover bg-center" data-alt="close-up of ancient library books with dramatic light and shadows highlighting paper texture and ink"></div>
+</div>
+<div class="z-10 max-w-4xl">
+<span class="font-label text-tertiary-fixed uppercase tracking-[0.3em] text-xs mb-4 block">Evaluación de Metodología</span>
+<h1 class="font-headline text-5xl md:text-7xl font-bold text-white uppercase tracking-tighter leading-none">
+                    Cuestionario de <br/><span class="text-tertiary-fixed-dim">Diagnóstico</span>
+</h1>
+</div>
+</section>
+<!-- Form Section -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 py-20 flex flex-col lg:flex-row gap-16">
+<!-- Sidebar Sidebar/Anchor -->
+<aside class="lg:w-1/4 hidden lg:block">
+<div class="sticky top-32 border-l-4 border-primary pl-8 py-4">
+<p class="font-headline text-2xl font-bold uppercase leading-tight mb-6">Instrucciones <br/>del Decálogo</p>
+<p class="text-on-surface-variant text-sm leading-relaxed mb-8 font-light">
+                        Este diagnóstico utiliza principios de arquitectura cognitiva para identificar sus patrones de estudio. Responda con honestidad académica.
+                    </p>
+<div class="space-y-4">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="architecture">architecture</span>
+<span class="text-[10px] uppercase tracking-widest font-bold">Precisión Analítica</span>
+</div>
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary" data-icon="menu_book">menu_book</span>
+<span class="text-[10px] uppercase tracking-widest font-bold">Enfoque Literario</span>
+</div>
+</div>
+</div>
+</aside>
+<!-- Main Questionnaire -->
+<form action="#" class="lg:w-3/4 space-y-24">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-20">
+<!-- Question 1 -->
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="font-headline text-4xl font-bold text-primary/10 group-hover:text-tertiary-fixed-dim transition-colors">01</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Atención</span>
+</div>
+<h3 class="font-headline text-xl font-medium mb-8 leading-snug">¿Te distraes fácilmente?</h3>
+<div class="flex flex-col gap-2">
+<div class="relative">
+<input class="hidden peer" id="q1a" name="q1" type="radio" value="siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q1a">Siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q1b" name="q1" type="radio" value="casi_siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q1b">Casi siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q1c" name="q1" type="radio" value="casi_nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q1c">Casi nunca</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q1d" name="q1" type="radio" value="nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q1d">Nunca</label>
+</div>
+</div>
+</div>
+<!-- Question 2 -->
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="font-headline text-4xl font-bold text-primary/10 group-hover:text-tertiary-fixed-dim transition-colors">02</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Psicología</span>
+</div>
+<h3 class="font-headline text-xl font-medium mb-8 leading-snug">¿En épocas de exámenes te llenas de ansiedad?</h3>
+<div class="flex flex-col gap-2">
+<div class="relative">
+<input class="hidden peer" id="q2a" name="q2" type="radio" value="siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q2a">Siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q2b" name="q2" type="radio" value="casi_siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q2b">Casi siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q2c" name="q2" type="radio" value="casi_nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q2c">Casi nunca</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q2d" name="q2" type="radio" value="nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q2d">Nunca</label>
+</div>
+</div>
+</div>
+<!-- More questions... (preserved as per source) -->
+<!-- Question 3 -->
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="font-headline text-4xl font-bold text-primary/10 group-hover:text-tertiary-fixed-dim transition-colors">03</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Naturaleza</span>
+</div>
+<h3 class="font-headline text-xl font-medium mb-8 leading-snug">¿Tienes que estudiar materias que requieren mucha práctica?</h3>
+<div class="flex flex-col gap-2">
+<div class="relative">
+<input class="hidden peer" id="q3a" name="q3" type="radio" value="siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q3a">Siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q3b" name="q3" type="radio" value="casi_siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q3b">Casi siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q3c" name="q3" type="radio" value="casi_nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q3c">Casi nunca</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q3d" name="q3" type="radio" value="nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q3d">Nunca</label>
+</div>
+</div>
+</div>
+<!-- Question 4 -->
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="font-headline text-4xl font-bold text-primary/10 group-hover:text-tertiary-fixed-dim transition-colors">04</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Dimensión</span>
+</div>
+<h3 class="font-headline text-xl font-medium mb-8 leading-snug">¿El objetivo a estudiar te parece demasiado grande?</h3>
+<div class="flex flex-col gap-2">
+<div class="relative">
+<input class="hidden peer" id="q4a" name="q4" type="radio" value="siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q4a">Siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q4b" name="q4" type="radio" value="casi_siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q4b">Casi siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q4c" name="q4" type="radio" value="casi_nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q4c">Casi nunca</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q4d" name="q4" type="radio" value="nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q4d">Nunca</label>
+</div>
+</div>
+</div>
+<!-- Question 5 -->
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="font-headline text-4xl font-bold text-primary/10 group-hover:text-tertiary-fixed-dim transition-colors">05</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Procrastinación</span>
+</div>
+<h3 class="font-headline text-xl font-medium mb-8 leading-snug">¿Sueles procrastinar para estudiar?</h3>
+<div class="flex flex-col gap-2">
+<div class="relative">
+<input class="hidden peer" id="q5a" name="q5" type="radio" value="siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q5a">Siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q5b" name="q5" type="radio" value="casi_siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q5b">Casi siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q5c" name="q5" type="radio" value="casi_nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q5c">Casi nunca</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q5d" name="q5" type="radio" value="nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q5d">Nunca</label>
+</div>
+</div>
+</div>
+<!-- Question 6 -->
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="font-headline text-4xl font-bold text-primary/10 group-hover:text-tertiary-fixed-dim transition-colors">06</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Cognición</span>
+</div>
+<h3 class="font-headline text-xl font-medium mb-8 leading-snug">¿La materia que vas a estudiar se debe comprender más que practicar?</h3>
+<div class="flex flex-col gap-2">
+<div class="relative">
+<input class="hidden peer" id="q6a" name="q6" type="radio" value="siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q6a">Siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q6b" name="q6" type="radio" value="casi_siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q6b">Casi siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q6c" name="q6" type="radio" value="casi_nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q6c">Casi nunca</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q6d" name="q6" type="radio" value="nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q6d">Nunca</label>
+</div>
+</div>
+</div>
+<!-- Question 7 -->
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="font-headline text-4xl font-bold text-primary/10 group-hover:text-tertiary-fixed-dim transition-colors">07</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Abstracción</span>
+</div>
+<h3 class="font-headline text-xl font-medium mb-8 leading-snug">¿Lo que vas a estudiar tiene conceptos complejos o requieren aplicar la lógica?</h3>
+<div class="flex flex-col gap-2">
+<div class="relative">
+<input class="hidden peer" id="q7a" name="q7" type="radio" value="siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q7a">Siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q7b" name="q7" type="radio" value="casi_siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q7b">Casi siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q7c" name="q7" type="radio" value="casi_nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q7c">Casi nunca</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q7d" name="q7" type="radio" value="nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q7d">Nunca</label>
+</div>
+</div>
+</div>
+<!-- Question 8 -->
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="font-headline text-4xl font-bold text-primary/10 group-hover:text-tertiary-fixed-dim transition-colors">08</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Comprensión</span>
+</div>
+<h3 class="font-headline text-xl font-medium mb-8 leading-snug">¿Lees, pero no comprendes nada?</h3>
+<div class="flex flex-col gap-2">
+<div class="relative">
+<input class="hidden peer" id="q8a" name="q8" type="radio" value="siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q8a">Siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q8b" name="q8" type="radio" value="casi_siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q8b">Casi siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q8c" name="q8" type="radio" value="casi_nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q8c">Casi nunca</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q8d" name="q8" type="radio" value="nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q8d">Nunca</label>
+</div>
+</div>
+</div>
+<!-- Question 9 -->
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="font-headline text-4xl font-bold text-primary/10 group-hover:text-tertiary-fixed-dim transition-colors">09</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Retención</span>
+</div>
+<h3 class="font-headline text-xl font-medium mb-8 leading-snug">¿Sientes que te quedan vacíos de aprendizaje cuando estudias?</h3>
+<div class="flex flex-col gap-2">
+<div class="relative">
+<input class="hidden peer" id="q9a" name="q9" type="radio" value="siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q9a">Siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q9b" name="q9" type="radio" value="casi_siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q9b">Casi siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q9c" name="q9" type="radio" value="casi_nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q9c">Casi nunca</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q9d" name="q9" type="radio" value="nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q9d">Nunca</label>
+</div>
+</div>
+</div>
+<!-- Question 10 -->
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="font-headline text-4xl font-bold text-primary/10 group-hover:text-tertiary-fixed-dim transition-colors">10</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Semántica</span>
+</div>
+<h3 class="font-headline text-xl font-medium mb-8 leading-snug">¿Recuerdas nombres, pero no recuerdas los conceptos?</h3>
+<div class="flex flex-col gap-2">
+<div class="relative">
+<input class="hidden peer" id="q10a" name="q10" type="radio" value="siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q10a">Siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q10b" name="q10" type="radio" value="casi_siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q10b">Casi siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q10c" name="q10" type="radio" value="casi_nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q10c">Casi nunca</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q10d" name="q10" type="radio" value="nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q10d">Nunca</label>
+</div>
+</div>
+</div>
+<!-- Question 11 -->
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="font-headline text-4xl font-bold text-primary/10 group-hover:text-tertiary-fixed-dim transition-colors">11</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Investigación</span>
+</div>
+<h3 class="font-headline text-xl font-medium mb-8 leading-snug">¿Lo que te ocupa es un trabajo de investigación?</h3>
+<div class="flex flex-col gap-2">
+<div class="relative">
+<input class="hidden peer" id="q11a" name="q11" type="radio" value="siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q11a">Siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q11b" name="q11" type="radio" value="casi_siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q11b">Casi siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q11c" name="q11" type="radio" value="casi_nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q11c">Casi nunca</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q11d" name="q11" type="radio" value="nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q11d">Nunca</label>
+</div>
+</div>
+</div>
+<!-- Question 12 -->
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="font-headline text-4xl font-bold text-primary/10 group-hover:text-tertiary-fixed-dim transition-colors">12</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Lectura</span>
+</div>
+<h3 class="font-headline text-xl font-medium mb-8 leading-snug">¿Contiene un volumen alto de lectura?</h3>
+<div class="flex flex-col gap-2">
+<div class="relative">
+<input class="hidden peer" id="q12a" name="q12" type="radio" value="siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q12a">Siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q12b" name="q12" type="radio" value="casi_siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q12b">Casi siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q12c" name="q12" type="radio" value="casi_nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q12c">Casi nunca</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q12d" name="q12" type="radio" value="nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q12d">Nunca</label>
+</div>
+</div>
+</div>
+<!-- Question 13 -->
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="font-headline text-4xl font-bold text-primary/10 group-hover:text-tertiary-fixed-dim transition-colors">13</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Densidad</span>
+</div>
+<h3 class="font-headline text-xl font-medium mb-8 leading-snug">¿Tienes que estudiar capítulos enteros o textos muy densos?</h3>
+<div class="flex flex-col gap-2">
+<div class="relative">
+<input class="hidden peer" id="q13a" name="q13" type="radio" value="siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q13a">Siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q13b" name="q13" type="radio" value="casi_siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q13b">Casi siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q13c" name="q13" type="radio" value="casi_nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q13c">Casi nunca</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q13d" name="q13" type="radio" value="nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q13d">Nunca</label>
+</div>
+</div>
+</div>
+<!-- Question 14 -->
+<div class="group">
+<div class="flex justify-between items-baseline mb-4">
+<span class="font-headline text-4xl font-bold text-primary/10 group-hover:text-tertiary-fixed-dim transition-colors">14</span>
+<span class="font-label text-[10px] text-on-surface-variant uppercase tracking-widest">Olvido</span>
+</div>
+<h3 class="font-headline text-xl font-medium mb-8 leading-snug">¿Se te olvida pronto lo que estudias o lees?</h3>
+<div class="flex flex-col gap-2">
+<div class="relative">
+<input class="hidden peer" id="q14a" name="q14" type="radio" value="siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q14a">Siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q14b" name="q14" type="radio" value="casi_siempre"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q14b">Casi siempre</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q14c" name="q14" type="radio" value="casi_nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q14c">Casi nunca</label>
+</div>
+<div class="relative">
+<input class="hidden peer" id="q14d" name="q14" type="radio" value="nunca"/>
+<label class="flex items-center px-4 py-3 border border-outline/20 cursor-pointer hover:bg-surface-container transition-all uppercase text-[10px] font-bold tracking-widest peer-checked:bg-primary peer-checked:text-white" for="q14d">Nunca</label>
+</div>
+</div>
+</div>
+</div>
+<!-- Submit Button -->
+<div class="pt-12 border-t-2 border-primary/5 flex justify-end">
+<button class="group relative bg-primary text-on-primary px-12 py-5 font-headline font-bold text-lg uppercase tracking-widest hover:bg-tertiary-fixed-variant transition-colors overflow-hidden" type="submit">
+<span class="relative z-10 flex items-center gap-4">
+                            Finalizar Análisis
+                            <span class="material-symbols-outlined group-hover:translate-x-2 transition-transform" data-icon="arrow_forward">arrow_forward</span>
+</span>
+</button>
+</div>
+</form>
+</section>
+</main>
+
+<!-- Footer -->
+<footer class="bg-primary-container py-16 px-12 text-on-primary-container border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-2">
+<span class="font-headline font-black text-3xl text-surface uppercase block mb-4">Architectural Intellectualism</span>
+<p class="max-w-sm opacity-60 font-body text-sm leading-relaxed">
+                Un sistema para la élite intelectual que busca profundidad sobre velocidad. Basado en principios de brutalismo funcional y neurociencia del aprendizaje.
+            </p>
+</div>
+<div class="">
+<span class="font-headline font-bold uppercase text-tertiary-fixed mb-4 block">Metodologías</span>
+<ul class="space-y-2 opacity-80 uppercase text-sm font-bold tracking-wider">
+<li class=""><a class="hover:text-surface" href="pomodoro.html">Pomodoro</a></li>
+<li class=""><a class="hover:text-surface" href="feynman.html">Feynman</a></li>
+<li class=""><a class="hover:text-surface" href="sqr.html">SQ3R</a></li>
+</ul>
+</div>
+<div>
+<span class="font-headline font-bold uppercase text-tertiary-fixed mb-4 block">Archivo</span>
+<ul class="space-y-2 opacity-80 uppercase text-sm font-bold tracking-wider">
+<li><a class="hover:text-surface" href="form.html">Comenzar</a></li>
+<li><a class="hover:text-surface" href="index.html">Home</a></li>
+<li class=""><a class="hover:text-surface" href="#">Documentacion</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-xs opacity-40 uppercase tracking-widest font-bold">© 2026 Protocolo de Inmersión Cognitiva. No se permite la mediocridad.</span>
+<div class="flex gap-6 opacity-40">
+<span class="material-symbols-outlined" data-icon="policy"><br></span>
+<span class="material-symbols-outlined" data-icon="terminal"><br></span>
+</div>
+</div>
+</footer>
+</body></html>

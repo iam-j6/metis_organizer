@@ -1,0 +1,277 @@
+<!DOCTYPE html><html class="light" lang="en">
+<head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Architectural Scholar | Precision in Discipline</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#e9e0e1",
+                        "outline": "#757681",
+                        "secondary-fixed-dim": "#ccc5c6",
+                        "inverse-on-surface": "#f8efed",
+                        "tertiary-fixed-dim": "#ffb689",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#45464f",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#1e1b1c",
+                        "tertiary-fixed": "#ffdbc8",
+                        "on-tertiary-fixed-variant": "#733502",
+                        "background": "#fff8f6",
+                        "on-tertiary-fixed": "#321300",
+                        "secondary": "#625d5e",
+                        "surface-dim": "#e1d8d6",
+                        "inverse-surface": "#342f2e",
+                        "surface-container": "#f5ecea",
+                        "on-surface": "#1e1b1a",
+                        "primary": "#0A1E54",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1e1b1a",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e9e0e1",
+                        "surface-container-high": "#efe6e4",
+                        "surface-container-low": "#fbf2f0",
+                        "surface-variant": "#e9e1df",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "outline-variant": "#c5c6d1",
+                        "surface-tint": "#4c5c94",
+                        "surface-container-highest": "#e9e1df",
+                        "surface-bright": "#fff8f6",
+                        "on-primary-fixed-variant": "#33447a",
+                        "primary-container": "#0a1e54",
+                        "surface": "#fff8f6",
+                        "primary-fixed": "#dce1ff",
+                        "on-primary-container": "#7787c3",
+                        "tertiary": "#1a0700",
+                        "tertiary-container": "#3c1800",
+                        "on-tertiary-container": "#c57640",
+                        "on-secondary-container": "#696364",
+                        "on-primary-fixed": "#01164d",
+                        "inverse-primary": "#b6c4ff",
+                        "on-secondary-fixed-variant": "#4a4547",
+                        "error": "#ba1a1a",
+                        "accent": "#C87842",
+                        "neutral-custom": "#F9F0EE",
+                        "secondary-custom": "#CFC7C8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Work Sans"],
+                        "label": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Work Sans', sans-serif; }
+        h1, h2, h3, h4, .headline { font-family: 'Space Grotesk', sans-serif; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .brutalist-gradient { background: linear-gradient(135deg, #0A1E54 0%, #00092d 100%); }
+        .sharp-border { border-radius: 0 !important; }
+    </style>
+    </head>
+<body class="bg-background text-on-surface selection:bg-tertiary-fixed selection:text-on-tertiary-fixed">
+<!-- TopAppBar -->
+<header class="bg-neutral-custom/95 dark:bg-[#00092d]/95 backdrop-blur-md fixed top-0 left-0 w-full z-50">
+<nav class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-primary dark:text-neutral-custom font-['Space_Grotesk'] uppercase" style="">metis organizer</div>
+<div class="hidden lg:flex gap-8 items-center font-['Space_Grotesk'] uppercase tracking-tighter text-sm">
+<a class="text-accent border-b-2 border-accent pb-1 translate-y-0.5 transition-transform" href="index.html" style="">HOME</a>
+<a class="text-primary dark:text-secondary-custom opacity-70 hover:opacity-100 hover:text-accent transition-colors duration-200" href="pomodoro.html" style="">Pomodoro</a>
+<a class="text-primary dark:text-secondary-custom opacity-70 hover:opacity-100 hover:text-accent transition-colors duration-200" href="feynman.html" style="">Feynman</a>
+<a class="text-primary dark:text-secondary-custom opacity-70 hover:opacity-100 hover:text-accent transition-colors duration-200" href="sqr.html" style="">SQ3R</a>
+<a class="bg-primary text-on-primary px-6 py-2 sharp-border font-bold hover:bg-accent transition-colors" href="form.html" style="">Comenzar</a>
+</div>
+<div class="lg:hidden">
+<span class="material-symbols-outlined text-primary" style="">menu</span>
+</div>
+</nav>
+    </header>
+<main class="pt-0">
+<!-- Hero Section with Full Background Image -->
+<section class="relative min-h-screen flex items-center overflow-hidden">
+<div class="absolute inset-0 z-0">
+<picture>
+<source media="(min-width: 1280px)" srcset="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&amp;w=2070&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 1024px)" srcset="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&amp;w=1600&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1487958449943-2429e8be8625?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
+<img alt="Monolithic Architecture" class="w-full h-full object-cover grayscale opacity-60" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDQHYHbE4IrxjcwdnWZdh_Wntp9odQo0MidHoDmjStTAk5CwgdZdDOOd5RFsir1y1LWbQJ2_-XaodnVHfwG5WTkMkWWUKsU3zi8w_oxc6ntU2hcIVV9oxhRyg8hPXeY8P_Kztm6Mm9Fn0Ox-2Aa1jdg5MOKIk1rS7SAL5A6It3UFe7-iTOl2F776OWK9ALnU1NP5P1SxexGxH9f6uweR0C3nlD4bNvZFDotwqC2TdlSRblE9b97VTlg1VrwuSMeYGWAuAJq6Iuy14Gg" style="">
+</picture>
+<div class="absolute inset-0 bg-primary/40 mix-blend-multiply"></div>
+</div>
+<div class="relative z-10 px-8 md:px-16 lg:px-24 w-full max-w-6xl text-center lg:text-left mx-auto lg:ml-0">
+<p class="text-accent font-label uppercase tracking-[0.3em] mb-6 text-sm font-bold" style="">MARCO COGNITIVO</p>
+<h1 class="text-5xl md:text-8xl lg:text-9xl font-bold leading-[0.9] text-white tracking-tighter mb-10 drop-shadow-2xl" style="">METIS ORGANIZER</h1>
+<p class="max-w-md mx-auto lg:ml-0 text-lg text-neutral-custom mb-12 font-body leading-relaxed drop-shadow" style="">Un enfoque brutalista para el trabajo profundo. Rechaza la economía de la distracción. Domina las herramientas cognitivas utilizadas por los polímatas más disciplinados del mundo.</p>
+<div>
+<button class="bg-accent text-white px-12 py-5 text-xl font-bold sharp-border uppercase tracking-widest hover:bg-primary transition-all active:translate-y-1" style="">
+                        Iniciar
+                    </button>
+</div>
+</div>
+    </section>
+<!-- Feature Section (Techniques) - Centered on Mobile & Tablet -->
+<section class="py-32 px-8 lg:px-24 bg-surface">
+<div class="flex flex-col lg:flex-row gap-8 lg:gap-16 items-center lg:items-baseline mb-24 text-center lg:text-left">
+<h2 class="text-5xl md:text-7xl font-bold tracking-tighter text-primary flex-shrink-0 uppercase" style="">LOS PILARES</h2>
+<div class="h-[2px] bg-outline-variant/30 flex-grow hidden lg:block"></div>
+<p class="max-w-xs font-label uppercase text-xs tracking-widest text-outline mx-auto lg:mx-0" style="">Metodologías científicas para la síntesis de información.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-0">
+<!-- Pomodoro -->
+<article class="p-12 bg-surface-container-low border-b lg:border-b-0 lg:border-r border-outline-variant/10 group hover:bg-primary transition-all duration-500 text-center lg:text-left">
+<span class="text-6xl font-bold text-tertiary-container/20 group-hover:text-tertiary-fixed mb-8 block" style="">01</span>
+<h3 class="text-3xl font-bold text-primary group-hover:text-white mb-6 uppercase tracking-tight" style="">Pomodoro</h3>
+<p class="text-on-surface-variant group-hover:text-primary-fixed mb-8 leading-relaxed max-w-sm mx-auto lg:mx-0" style="">Sprints de enfoque con tiempo de precisión. 25 minutos de inmersión cognitiva absoluta seguidos de retiros tácticos estratégicos de 5 minutos.</p>
+<picture>
+<img alt="Pomodoro timer" class="w-full max-w-sm lg:max-w-none aspect-square object-cover grayscale group-hover:grayscale-0 transition-all mx-auto" data-alt="Minimalist red analog timer on a white architectural blueprint background" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD1vY-30pO949iIvCqkOeQ6MZ4DBZG-B3lGraSaZNwFojT7GUBJGj5blPzXsW42g5ecuepBpike8mFAOGAfPzbyU4gm6Atrqm-QkCUYR-4v9O4elmgDwdLI3NY63yQe6b_4-hem1Talc7ixVEGKAftUz_s4i2OVwfZfnhOWzZ2rDjOqVlDYf_5f0-Sr1VRo8evw_4yD48EnnI17gzU8vWQ2IaAesYSNhupKvquMImLoyrrZbWe-BV4K_Ay_1RBm4jbBFvInlk-qqwct" style="">
+</picture>
+</article>
+<!-- Feynman -->
+<article class="p-12 bg-surface-container border-b lg:border-b-0 lg:border-r border-outline-variant/10 group hover:bg-primary transition-all duration-500 text-center lg:text-left">
+<span class="text-6xl font-bold text-tertiary-container/20 group-hover:text-tertiary-fixed mb-8 block" style="">02</span>
+<h3 class="text-3xl font-bold text-primary group-hover:text-white mb-6 uppercase tracking-tight" style="">Feynman</h3>
+<p class="text-on-surface-variant group-hover:text-primary-fixed mb-8 leading-relaxed max-w-sm mx-auto lg:mx-0" style="">La simplificación como maestría. Si no puedes explicárselo a un principiante, no entiendes la arquitectura del concepto.</p>
+<picture>
+<img alt="Feynman method" class="w-full max-w-sm lg:max-w-none aspect-square object-cover grayscale group-hover:grayscale-0 transition-all mx-auto" data-alt="Hand-drawn simple physics diagrams on a large blackboard" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBc34_5vUcNJ1ymVOCaM2PZB79-9TzSMMYylONqKWuugt4ddnjZ9Sr1rJocXfHH063CxRXgg9vjd_9HkcLxK1Qns50V8T5xvt9UpcHwMqcMSsxMVUft0vVAstLUcXpmv_8DGHFV4ZZ7rCLtxKBbhmpxCB3MYdblwwA4MvilSjSltlMfU1yHsQHISKobAthfFCt8PO-Jgb113HtVcUhyljtut5qcFfPIa_q6U0p4B0ldMUvMqFq4B_KKKVAZPvIcKLN8cGVIhhTiEy7i" style="">
+</picture>
+</article>
+<!-- SQ3R -->
+<article class="p-12 bg-surface-container-high group hover:bg-primary transition-all duration-500 text-center lg:text-left">
+<span class="text-6xl font-bold text-tertiary-container/20 group-hover:text-tertiary-fixed mb-8 block" style="">03</span>
+<h3 class="text-3xl font-bold text-primary group-hover:text-white mb-6 uppercase tracking-tight" style="">SQ3R</h3>
+<p class="text-on-surface-variant group-hover:text-primary-fixed mb-8 leading-relaxed max-w-sm mx-auto lg:mx-0" style="">Inspeccionar, Preguntar, Leer, Recitar, Revisar. Una disección sistemática de textos complejos para asegurar la retención neuronal permanente.</p>
+<picture>
+<img alt="Reading methodology" class="w-full max-w-sm lg:max-w-none aspect-square object-cover grayscale group-hover:grayscale-0 transition-all mx-auto" data-alt="Macro photo of open heavy textbook pages" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDdmQUP2fIz2DzXgCEDf_Xteyr3CUi0XoPn65KPaP63JwOKVKh1RsTqjtgaP9N52zigeudofY7Fofjak_7V3S7HzLZWhrO-dCQmoD7CS-sDOxlN66XIJa3DqN7Kjl8uUT9w8N9Qs9jSMK4FRdNYAS66LVfvQXa0KK-AdVzT34S9k0eUTzn-fWB_JnDfi9nAsfjiCuoSavGQ_1QUSa_N8vmQdzAjfAk_FL7zz9NHqpUfZLazsmG8wBR25R29V2MUNbfQFNeDGdqlPA87" style="">
+</picture>
+</article>
+</div>
+    </section>
+<!-- Instructions Section - Centered on Mobile & Tablet -->
+<section class="py-32 bg-primary text-white">
+<div class="max-w-6xl mx-auto px-8">
+<div class="mb-24 text-center lg:text-left">
+<h2 class="text-5xl md:text-7xl font-bold tracking-tighter mb-8 uppercase" style="">SISTEMA DE EJECUCIÓN</h2>
+<p class="text-accent font-label uppercase tracking-widest text-sm mb-12" style="">Cómo integrar la disciplina arquitectónica en tu flujo de trabajo.</p>
+<div class="h-[1px] bg-white/20 w-full"></div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center mb-32">
+<div class="space-y-12 text-center lg:text-left">
+<div>
+<h3 class="text-3xl font-bold tracking-tight mb-6 uppercase text-secondary-custom" style="">01. Fase de Análisis</h3>
+<p class="text-lg opacity-80 leading-relaxed mb-6 max-w-xl mx-auto lg:mx-0" style="">Antes de comenzar cualquier sesión, identifica el núcleo del problema. Utiliza el portal para clasificar tu tarea según la carga cognitiva requerida.</p>
+<ul class="space-y-4 font-label text-sm tracking-wide flex flex-col items-center lg:items-start">
+<li class="flex items-center gap-3" style="">
+<span class="w-2 h-2 bg-accent"></span>
+                                    DEFINICIÓN DE OBJETIVOS CRÍTICOS
+                                </li>
+<li class="flex items-center gap-3" style="">
+<span class="w-2 h-2 bg-accent"></span>
+                                    ELIMINACIÓN DE RUIDO PERIFÉRICO
+                                </li>
+</ul>
+</div>
+<div>
+<h3 class="text-3xl font-bold tracking-tight mb-6 uppercase text-secondary-custom" style="">02. Implementación de Pilares</h3>
+<p class="text-lg opacity-80 leading-relaxed max-w-xl mx-auto lg:mx-0" style="">Selecciona uno de los tres pilares cognitivos. El sistema proporcionará un entorno temporizado y estructurado diseñado para esa metodología específica.</p>
+</div>
+</div>
+<div class="relative">
+<picture>
+<source media="(min-width: 1280px)" srcset="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&amp;w=2070&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 1024px)" srcset="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&amp;w=1600&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
+<img alt="Focus workspace" class="w-full max-w-2xl mx-auto aspect-[4/3] object-cover grayscale opacity-80" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAWi4h-xoK20-iBJEG7fnbKECYmtX-E7aNBdkueZit9KN_rp0Qw6CFfcEBPfDhoO9qNlbI8vc8TCgwH3tV5dn7DUQbBm0AvtOAmk89vZdDtQq7QHRkNvrtajnLjOCRE7T5KQSMK32hRJBejWezrwiwHOQhP1Njb3CeMxf5RdqggFNKMZ00QRXUvPAgVmuaqlT3R8-QiVqGY7lCzG8jYkc2NSckR1OfW2XW_Iy7DSYxWnHn0zeOQgqd9T90KPE_bp3mhCiG-YOSSXUCc" style="">
+</picture>
+<div class="absolute -bottom-6 -right-6 lg:-right-6 w-32 h-32 bg-accent/20 border border-accent/40 hidden lg:block"></div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+<div class="order-2 lg:order-1 relative">
+<picture>
+<source media="(min-width: 1280px)" srcset="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&amp;w=2069&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 1024px)" srcset="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&amp;w=1600&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 768px)" srcset="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
+<img alt="Systematic review" class="w-full max-w-2xl mx-auto aspect-[4/3] object-cover grayscale opacity-80" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC-8N_uLX_YV5natOC2amdG9fsieBR0agSt5OcqwY3yyIkk_51-q7p_KMexb56md179qud78KvHMS22533Kv31zdxK9qPO1dDpU_9ctcfmb93Qgmxn-N_ESdiCQuiDjOuOqoWHGMhkb8i6Db2ceI91KTODUKFlbFNNcfFQZVc1TlaqWW2Q_hRmyb1JLbrh51Fx97zLKgOUSH0tda3Ye7y2g1t2b-OHoN_griD9UvFQcAKoF3VBwYijRPNLZ8rAtyXHV48oxURPScDgr" style="">
+</picture>
+</div>
+<div class="order-1 lg:order-2 space-y-12 text-center lg:text-left">
+<div>
+<h3 class="text-3xl font-bold tracking-tight mb-6 uppercase text-secondary-custom" style="">03. Auditoría de Resultados</h3>
+<p class="text-lg opacity-80 leading-relaxed mb-6 max-w-xl mx-auto lg:mx-0" style="">Al finalizar, registra tu progreso. El Archivo permite una revisión sistemática de lo aprendido para garantizar que la estructura mental sea permanente y sólida.</p>
+<ul class="space-y-4 font-label text-sm tracking-wide flex flex-col items-center lg:items-start">
+<li class="flex items-center gap-3" style="">
+<span class="w-2 h-2 bg-accent"></span>
+                                    SÍNTESIS DE CONOCIMIENTO
+                                </li>
+<li class="flex items-center gap-3" style="">
+<span class="w-2 h-2 bg-accent"></span>
+                                    REVISIÓN DE LAGUNAS COGNITIVAS
+                                </li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+    </section>
+<!-- Aesthetic Quote Section - Centered on Mobile & Tablet -->
+<section class="py-40 px-8 lg:px-24">
+<div class="max-w-4xl mx-auto lg:ml-auto lg:mr-0 text-center lg:text-right">
+<span class="material-symbols-outlined text-8xl text-accent opacity-40 mb-8 block mx-auto lg:ml-auto lg:mr-0" data-icon="format_quote" style="">format_quote</span>
+<blockquote class="text-4xl md:text-6xl font-bold text-primary leading-tight tracking-tighter mb-10" style="">"La disciplina es el puente entre las metas y los logros. La estructura es la arquitectura que evita que el puente se colapse."</blockquote>
+<cite class="font-label uppercase tracking-widest text-sm text-outline not-italic">— El Manifiesto del Erudito</cite>
+</div>
+    </section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container py-16 px-12 text-on-primary-container border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-2">
+<span class="font-headline font-black text-3xl text-surface uppercase block mb-4">Architectural Intellectualism</span>
+<p class="max-w-sm opacity-60 font-body text-sm leading-relaxed">
+                Un sistema para la élite intelectual que busca profundidad sobre velocidad. Basado en principios de brutalismo funcional y neurociencia del aprendizaje.
+            </p>
+</div>
+<div class="">
+<span class="font-headline font-bold uppercase text-tertiary-fixed mb-4 block">Metodologías</span>
+<ul class="space-y-2 opacity-80 uppercase text-sm font-bold tracking-wider">
+<li class=""><a class="hover:text-surface" href="pomodoro.html">Pomodoro</a></li>
+<li class=""><a class="hover:text-surface" href="feynman.html">Feynman</a></li>
+<li class=""><a class="hover:text-surface" href="sqr.html">SQ3R</a></li>
+</ul>
+</div>
+<div>
+<span class="font-headline font-bold uppercase text-tertiary-fixed mb-4 block">Archivo</span>
+<ul class="space-y-2 opacity-80 uppercase text-sm font-bold tracking-wider">
+<li><a class="hover:text-surface" href="form.html">Comenzar</a></li>
+<li><a class="hover:text-surface" href="index.html">Home</a></li>
+<li class=""><a class="hover:text-surface" href="#">Documentacion</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-xs opacity-40 uppercase tracking-widest font-bold">© 2026 Protocolo de Inmersión Cognitiva. No se permite la mediocridad.</span>
+<div class="flex gap-6 opacity-40">
+<span class="material-symbols-outlined" data-icon="policy"><br></span>
+<span class="material-symbols-outlined" data-icon="terminal"><br></span>
+</div>
+</div>
+</footer>
+</body>
+</html>

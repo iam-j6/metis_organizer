@@ -1,0 +1,302 @@
+<!DOCTYPE html><html class="light" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0" name="viewport">
+<title>Método Pomodoro: El Algoritmo de la Productividad</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Work+Sans:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet">
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#e9e0e1",
+                        "outline": "#757681",
+                        "secondary-fixed-dim": "#ccc5c6",
+                        "inverse-on-surface": "#f8efed",
+                        "tertiary-fixed-dim": "#ffb689",
+                        "on-error-container": "#93000a",
+                        "on-surface-variant": "#45464f",
+                        "on-error": "#ffffff",
+                        "on-secondary-fixed": "#1e1b1c",
+                        "tertiary-fixed": "#ffdbc8",
+                        "on-tertiary-fixed-variant": "#733502",
+                        "background": "#fff8f6",
+                        "on-tertiary-fixed": "#321300",
+                        "secondary": "#625d5e",
+                        "surface-dim": "#e1d8d6",
+                        "inverse-surface": "#342f2e",
+                        "surface-container": "#f5ecea",
+                        "on-surface": "#1e1b1a",
+                        "primary": "#0A1E54",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "on-background": "#1e1b1a",
+                        "on-tertiary": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "secondary-fixed": "#e9e0e1",
+                        "surface-container-high": "#efe6e4",
+                        "surface-container-low": "#fbf2f0",
+                        "surface-variant": "#e9e1df",
+                        "primary-fixed-dim": "#b6c4ff",
+                        "outline-variant": "#c5c6d1",
+                        "surface-tint": "#4c5c94",
+                        "surface-container-highest": "#e9e1df",
+                        "surface-bright": "#fff8f6",
+                        "on-primary-fixed-variant": "#33447a",
+                        "primary-container": "#0a1e54",
+                        "surface": "#fff8f6",
+                        "primary-fixed": "#dce1ff",
+                        "on-primary-container": "#7787c3",
+                        "tertiary": "#1a0700",
+                        "tertiary-container": "#3c1800",
+                        "on-tertiary-container": "#c57640",
+                        "on-secondary-container": "#696364",
+                        "on-primary-fixed": "#01164d",
+                        "inverse-primary": "#b6c4ff",
+                        "on-secondary-fixed-variant": "#4a4547",
+                        "error": "#ba1a1a",
+                        "accent": "#C87842",
+                        "neutral-custom": "#F9F0EE",
+                        "secondary-custom": "#CFC7C8"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0px",
+                        "lg": "0px",
+                        "xl": "0px",
+                        "full": "9999px"
+                    },
+                    "fontFamily": {
+                        "headline": ["Space Grotesk"],
+                        "body": ["Work Sans"],
+                        "label": ["Space Grotesk"]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        body { font-family: 'Work Sans', sans-serif; }
+        h1, h2, h3, .font-headline { font-family: 'Space Grotesk', sans-serif; }
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-tertiary-fixed selection:text-on-tertiary-fixed" data-mode="connect">
+<!-- TopAppBar -->
+<header class="bg-neutral-custom/95 dark:bg-[#00092d]/95 backdrop-blur-md fixed top-0 left-0 w-full z-50">
+<nav class="flex justify-between items-center w-full px-8 py-6 max-w-[1920px] mx-auto">
+<div class="text-2xl font-bold tracking-tighter text-primary dark:text-neutral-custom font-['Space_Grotesk'] uppercase" style="">metis organizer</div>
+<div class="hidden lg:flex gap-8 items-center font-['Space_Grotesk'] uppercase tracking-tighter text-sm">
+<a class="text-primary dark:text-secondary-custom opacity-70 hover:opacity-100 hover:text-accent transition-colors duration-200" href="index.html" style="">HOME</a>
+
+<a class="text-accent border-b-2 border-accent pb-1 translate-y-0.5 transition-transform" href="pomodoro.html" style="">Pomodoro</a>
+
+<a class="text-primary dark:text-secondary-custom opacity-70 hover:opacity-100 hover:text-accent transition-colors duration-200" href="feynman.html" style="">Feynman</a>
+<a class="text-primary dark:text-secondary-custom opacity-70 hover:opacity-100 hover:text-accent transition-colors duration-200" href="sqr.html" style="">SQ3R</a>
+<a class="bg-primary text-on-primary px-6 py-2 sharp-border font-bold hover:bg-accent transition-colors" href="form.html" style="">Comenzar</a>
+</div>
+<div class="lg:hidden">
+<span class="material-symbols-outlined text-primary" style="">menu</span>
+</div>
+</nav>
+    </header>
+<main>
+<!-- Hero Section -->
+<section class="relative min-h-[819px] flex flex-col justify-center px-6 md:px-12 bg-surface overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-0">
+<div class="lg:col-span-8 z-10">
+<span class="label-sm text-tertiary font-bold tracking-[0.2em] uppercase mb-4 block" style="">Deep Work Protocol v.1.0</span>
+<h1 class="text-6xl md:text-8xl lg:text-[10rem] leading-[0.85] font-bold tracking-tighter mb-8 uppercase" style="">
+                        Método <br>
+<span class="text-tertiary-container bg-tertiary-fixed px-2" style="">Pomodoro</span>
+</h1>
+<p class="max-w-xl text-xl md:text-2xl text-on-surface-variant font-light leading-tight mb-12" style="">
+                        El Algoritmo de la Productividad: Un sistema arquitectónico para fragmentar la resistencia cognitiva y optimizar el enfoque sostenido.
+                    </p>
+</div>
+<div class="lg:col-span-4 relative h-64 lg:h-auto">
+<div class="absolute inset-0 bg-primary-container p-8 flex flex-col justify-end">
+<span class="text-on-primary-container text-[8rem] font-bold leading-none opacity-20" style="">25:00</span>
+<div class="absolute top-0 right-0 p-4">
+<span class="material-symbols-outlined text-[#C87842] text-6xl" data-icon="timer" style="">timer</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Asymmetric Decoration -->
+<div class="hidden lg:block absolute bottom-12 right-12 w-64 h-64 border-l border-t border-outline-variant opacity-30"></div>
+</section>
+<!-- The Core Concept: Brutalist Bento -->
+<section class="bg-primary-container py-24 px-6 md:px-12 text-[#F9F0EE]">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 items-start">
+<div class="md:col-span-1 border-l-4 border-[#C87842] pl-8">
+<h2 class="text-4xl font-bold uppercase mb-6 leading-none" style="">Fundamento <br>Estructural</h2>
+<p class="text-body-sm opacity-80" style="">Desarrollado por Francesco Cirillo, este sistema utiliza el tiempo como un aliado en lugar de un adversario. La premisa es simple: el cerebro humano no puede mantener un enfoque de alta intensidad indefinidamente.</p>
+</div>
+<div class="md:col-span-2">
+<picture>
+<source media="(max-width: 639px)" srcset="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&amp;w=640&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 640px) and (max-width: 1023px)" srcset="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&amp;w=1024&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 1024px) and (max-width: 1535px)" srcset="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&amp;w=1536&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 1536px)" srcset="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&amp;w=2000&amp;auto=format&amp;fit=crop">
+<img alt="Student in focus mode" class="w-full h-[500px] object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-700" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBZHpVFy81F2DuKNz5jp2QOVugoaiu5byYmwYrfSj78JUPeUL5xSaJUHuRZlGSWDHqQf3OP0cVuGgtZRtmeDrwmMDM5bdZ7wEy6zyjRXDpwVunapk75_HgTwwjwNmDkZuv0P8oIKi20U2AtSwVDcUjpdIRq70HqgW7hirlcyg0OU-bLI2EBSxeX5Ev7eW-daEAx7cqrA8ij8Uw5liIQIFFH8iQ6kq6pVLUkRWuQxen2LcHVf0KlAL0k9a1hkF5X1mBjgHURc7Cs1rWQ" style="">
+</picture>
+</div>
+</div>
+</section>
+<!-- The Algorithm Step-by-Step -->
+<section class="bg-surface py-24 px-6 md:px-12">
+<div class="mb-20 flex justify-between items-end">
+<h2 class="text-5xl md:text-7xl font-bold uppercase tracking-tighter" style="">Ejecución del<br>Algoritmo</h2>
+<div class="text-right hidden md:block">
+<span class="text-outline text-sm uppercase tracking-widest font-bold" style="">Protocolo de 5 Pasos</span>
+</div>
+</div>
+<div class="space-y-0">
+<!-- Step 1 -->
+<div class="group flex flex-col md:flex-row items-start md:items-center py-16 border-t border-outline-variant/20 hover:bg-surface-container-low transition-colors px-4">
+<span class="text-6xl md:text-8xl font-bold text-outline opacity-20 mr-12 group-hover:text-tertiary group-hover:opacity-100 transition-all" style="">01</span>
+<div class="max-w-2xl flex-grow">
+<h3 class="text-3xl font-bold uppercase mb-4" style="">Planificar la Tarea</h3>
+<p class="text-on-surface-variant leading-relaxed" style="">Seleccione una única tarea para completar. La ambigüedad es la enemiga de la concentración. Defina el "Done" antes de iniciar el reloj.</p>
+</div>
+<div class="hidden lg:block w-72 h-48 ml-auto overflow-hidden">
+<picture>
+<source media="(max-width: 639px)" srcset="https://images.unsplash.com/photo-1518005020251-58296d8f8bca?q=80&amp;w=400&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 640px) and (max-width: 1023px)" srcset="https://images.unsplash.com/photo-1518005020251-58296d8f8bca?q=80&amp;w=640&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 1024px) and (max-width: 1535px)" srcset="https://images.unsplash.com/photo-1518005020251-58296d8f8bca?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 1536px)" srcset="https://images.unsplash.com/photo-1518005020251-58296d8f8bca?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
+<img alt="Planning task" class="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 transition-all duration-500" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBSG1ixN1iHhyyyZshFFPKQCSwaFTyg-gsDVCQX0bfwANv258bulbvX6z5UjUttrYZOQYX-1Rudn_EyyVI_DwLsUh6a4S0neofTugS_gW2NMfYCISs7aoEUm2eQPTXHrNyEvXanIkCP44VB91wsdqaCBkbXyMfoG6gr1-Z3J3N5aI6PLsHoQjcUpPHAC89UMj82BgAkt_7344XBixrdLWw4XSqKJ7osjv275N_pMc9H9v6HGzfaia_0xS614Doh05wL6GOcucvU9xD2" style="">
+</picture>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="group flex flex-col md:flex-row items-start md:items-center py-16 border-t border-outline-variant/20 hover:bg-surface-container-low transition-colors px-4">
+<span class="text-6xl md:text-8xl font-bold text-outline opacity-20 mr-12 group-hover:text-tertiary group-hover:opacity-100 transition-all" style="">02</span>
+<div class="max-w-2xl flex-grow">
+<h3 class="text-3xl font-bold uppercase mb-4" style="">Focus (25m)</h3>
+<p class="text-on-surface-variant leading-relaxed" style="">Ajuste el temporizador. Durante estos 25 minutos, la tarea es sagrada. No se permiten interrupciones externas ni derivas cognitivas.</p>
+</div>
+<div class="hidden lg:block w-72 h-48 ml-auto overflow-hidden">
+<picture>
+<source media="(max-width: 639px)" srcset="https://images.unsplash.com/photo-1470723710355-95304d8aece4?q=80&amp;w=400&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 640px) and (max-width: 1023px)" srcset="https://images.unsplash.com/photo-1470723710355-95304d8aece4?q=80&amp;w=640&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 1024px) and (max-width: 1535px)" srcset="https://images.unsplash.com/photo-1470723710355-95304d8aece4?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 1536px)" srcset="https://images.unsplash.com/photo-1470723710355-95304d8aece4?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
+<img alt="Intense Focus" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 transition-all duration-500" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBDxZUbNVT909Peu-0iV4rgz7uAv9dlKMGoVX8Gnq0T-KWlMf7igjNdshvwjuFP12pWWgd2gX1gPCqItPmMFJrLSlBlCfJTrdo_D7AFspYUF8Uw-aGlMCCCOp4Tit-ctGh8VO13uKd8ecOLsyB31PAL56TyBNnMBbeTQudGT4uZ7liPtnrDZUB380uvdPqP15qhnWHylxBv91QJJRWr0HV6di4vpET5Rv5oxubNMwY20RyuvzE9fKmCClPf2M9fk6QL-qsT2cIOdqL4" style="">
+</picture>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="group flex flex-col md:flex-row items-start md:items-center py-16 border-t border-outline-variant/20 hover:bg-surface-container-low transition-colors px-4">
+<span class="text-6xl md:text-8xl font-bold text-outline opacity-20 mr-12 group-hover:text-tertiary group-hover:opacity-100 transition-all" style="">03</span>
+<div class="max-w-2xl flex-grow">
+<h3 class="text-3xl font-bold uppercase mb-4" style="">Descanso Corto (5m)</h3>
+<p class="text-on-surface-variant leading-relaxed" style="">Cuando suene la alarma, deténgase inmediatamente. Aléjese de las pantallas. Hidrátese. Respire. Reinicie el ATP cerebral.</p>
+</div>
+<div class="hidden lg:block w-72 h-48 ml-auto overflow-hidden">
+<picture>
+<source media="(max-width: 639px)" srcset="https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&amp;w=400&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 640px) and (max-width: 1023px)" srcset="https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&amp;w=640&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 1024px) and (max-width: 1535px)" srcset="https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 1536px)" srcset="https://images.unsplash.com/photo-1507413245164-6160d8298b31?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
+<img alt="Short Break" class="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 transition-all duration-500" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4MbpH-mhhxvopuXGqQFjeyn5LXE_DBr99wdwd3w8f4q3qWSTnQe4WCuC7M-WpLYA2lGkpo8QkIjW62tclVVGi_MsFKrS1sR0qqsx4pffLSqssDWpOjpf2WEKr90uMBiazSa5YWR8UDEg16ATO6gO4LfUKw7r9vLjJOSZ_qHrYHkMd0zupxR6JM1OSBAyM5hYPF-jpnLtH-oXK8RZUuVz7dKZaMQ9hlt8hZTP1qRTFUaU_sSA-tkZ-CpZ2UsMM0ccaNfIsVgC5NFxp" style="">
+</picture>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="group flex flex-col md:flex-row items-start md:items-center py-16 border-t border-outline-variant/20 hover:bg-surface-container-low transition-colors px-4">
+<span class="text-6xl md:text-8xl font-bold text-outline opacity-20 mr-12 group-hover:text-tertiary group-hover:opacity-100 transition-all" style="">04</span>
+<div class="max-w-2xl flex-grow">
+<h3 class="text-3xl font-bold uppercase mb-4" style="">Repetir el Ciclo</h3>
+<p class="text-on-surface-variant leading-relaxed" style="">Regrese a la tarea. Cada ciclo de 25/5 es un 'Pomodoro'. El registro visual de estos bloques construye un momentum psicológico imparable.</p>
+</div>
+<div class="hidden lg:block w-72 h-48 ml-auto overflow-hidden">
+<picture>
+<source media="(max-width: 639px)" srcset="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&amp;w=400&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 640px) and (max-width: 1023px)" srcset="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&amp;w=640&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 1024px) and (max-width: 1535px)" srcset="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 1536px)" srcset="https://images.unsplash.com/photo-1511818966892-d7d671e672a2?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
+<img alt="Repeating Pattern" class="w-full h-full object-cover grayscale brightness-75 group-hover:grayscale-0 transition-all duration-500" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAP09QFHUnUrhnvp2hBbGUSxz-w_m-fPrecpQNESXNBC6TodH7Up9HwHYSiuDVZvy_bIK_jrSxwz6lcoDURRfm6R-JuVOo5xuRjzRaifWRBPv-oQOQUXNlZPIbhKkOTWb0X7Fjb2to6_JUgVcj1wCk4E3sAtwMvyawH6tl0VHV0dvC9Mxe4AE8enFTIQvJS_lSDVi9hHf6SqQtVbbB06-tnh4c7dfoVfyW8vpr8QsbQFJ7RvXfofLSaadiOz-OGGUSWzUoUSGYhvIkL" style="">
+</picture>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="group flex flex-col md:flex-row items-start md:items-center py-16 border-y border-outline-variant/20 hover:bg-surface-container-low transition-colors px-4">
+<span class="text-6xl md:text-8xl font-bold text-outline opacity-20 mr-12 group-hover:text-tertiary group-hover:opacity-100 transition-all" style="">05</span>
+<div class="max-w-2xl flex-grow">
+<h3 class="text-3xl font-bold uppercase mb-4" style="">Descanso Largo (15-30m)</h3>
+<p class="text-on-surface-variant leading-relaxed" style="">Después de cuatro Pomodoros, tome un descanso extenso. Este es el periodo de consolidación donde el conocimiento se asienta en la memoria a largo plazo.</p>
+</div>
+<div class="hidden lg:block w-72 h-48 ml-auto overflow-hidden">
+<picture>
+<source media="(max-width: 639px)" srcset="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&amp;w=400&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 640px) and (max-width: 1023px)" srcset="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&amp;w=640&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 1024px) and (max-width: 1535px)" srcset="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
+<source media="(min-width: 1536px)" srcset="https://images.unsplash.com/photo-1497366754035-f200968a6e72?q=80&amp;w=1200&amp;auto=format&amp;fit=crop">
+<img alt="Quiet Atrium" class="w-full h-full object-cover grayscale brightness-90 group-hover:grayscale-0 transition-all duration-500" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAUHhLHG9wZbj5VxJnhodWZUMM3DL9myAKH42hTSWPKkOWrJTnmb3vlUj7-jYFLXlBw5RpEZkssf6goAgcznVhh--rm-sJtHUxUIs_vXY1LT1biRI9vkt4kNoxDZpfPznSIlc-PzKX3hR265i6XLOX-MHG0HCGNjspQfoI9piSznWjF2TiEPfsI58ZnoOUdHy153TnsB5Lu0gOtkCwwPdL9k_1J8SqCBxLe8HBHdPuK6Ofh6Z8nO-2lsHbM9ULdgveTDoaWrUUd6CDJ" style="">
+</picture>
+</div>
+</div>
+</div>
+</section>
+<!-- Philosophical Closing -->
+<section class="bg-surface-container py-32 px-6 md:px-12 text-center overflow-hidden relative">
+<div class="max-w-4xl mx-auto z-10 relative">
+<span class="material-symbols-outlined text-8xl text-tertiary mb-8" data-icon="format_quote" style="">format_quote</span>
+<h2 class="text-4xl md:text-6xl font-bold uppercase leading-tight mb-12 tracking-tighter" style="">
+                    "La productividad no se trata de hacer más, sino de ser dueño de tu atención."
+                </h2>
+<div class="flex flex-col md:flex-row gap-6 justify-center">
+<button class="bg-primary text-on-primary px-12 py-6 text-xl font-bold uppercase tracking-widest hover:bg-tertiary-fixed-variant transition-all" style="">
+                        Iniciar</button>
+<button class="border-2 border-primary text-primary px-12 py-6 text-xl font-bold uppercase tracking-widest hover:bg-primary hover:text-on-primary transition-all" style=""><br></button>
+</div>
+</div>
+<!-- Background Typography Decor -->
+<div class="absolute top-1/2 left-0 -translate-y-1/2 text-[20rem] font-black opacity-[0.03] select-none pointer-events-none uppercase" style="">
+                DEEP WORK
+            </div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary-container py-16 px-12 text-on-primary-container border-t border-outline-variant/10">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="md:col-span-2">
+<span class="font-headline font-black text-3xl text-surface uppercase block mb-4">Architectural Intellectualism</span>
+<p class="max-w-sm opacity-60 font-body text-sm leading-relaxed">
+                Un sistema para la élite intelectual que busca profundidad sobre velocidad. Basado en principios de brutalismo funcional y neurociencia del aprendizaje.
+            </p>
+</div>
+<div class="">
+<span class="font-headline font-bold uppercase text-tertiary-fixed mb-4 block">Metodologías</span>
+<ul class="space-y-2 opacity-80 uppercase text-sm font-bold tracking-wider">
+<li class=""><a class="hover:text-surface" href="pomodoro.html">Pomodoro</a></li>
+<li class=""><a class="hover:text-surface" href="feynman.html">Feynman</a></li>
+<li class=""><a class="hover:text-surface" href="sqr.html">SQ3R</a></li>
+</ul>
+</div>
+<div>
+<span class="font-headline font-bold uppercase text-tertiary-fixed mb-4 block">Archivo</span>
+<ul class="space-y-2 opacity-80 uppercase text-sm font-bold tracking-wider">
+<li><a class="hover:text-surface" href="form.html">Comenzar</a></li>
+<li><a class="hover:text-surface" href="index.html">Home</a></li>
+<li class=""><a class="hover:text-surface" href="#">Documentacion</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-16 pt-8 border-t border-outline-variant/10 flex flex-col md:flex-row justify-between items-center gap-4">
+<span class="text-xs opacity-40 uppercase tracking-widest font-bold">© 2026 Protocolo de Inmersión Cognitiva. No se permite la mediocridad.</span>
+<div class="flex gap-6 opacity-40">
+<span class="material-symbols-outlined" data-icon="policy"><br></span>
+<span class="material-symbols-outlined" data-icon="terminal"><br></span>
+</div>
+</div>
+</footer>
+</body></html>
